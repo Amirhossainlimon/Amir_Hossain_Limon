@@ -4,10 +4,8 @@ A modern and responsive personal portfolio website showcasing my skills, project
 
 ## 🌐 Live Demo
 
-🔗 Primary Link:  
-https://amir-hossain-limon-16.vercel.app/
-🔗 Backup Link:  
-https://scintillating-lily-eae76c.netlify.app/
+🔗 Primary Link:  https://amir-hossain-limon-16.vercel.app/
+
 
 ## 🛠️ Built With
 
