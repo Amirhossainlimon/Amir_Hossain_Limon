@@ -1,1090 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amir Hossain Limon | Flutter Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Hossain Limon | Flutter Developer</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome & DevIcons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-
-<link rel="stylesheet" href="style.css">
-<style>
-    /* Particle Network Background Canvas Styling */
-    #network-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1; 
-        pointer-events: none;
-    }
-</style>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Particle Network Background Canvas Styling */
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
-<body>
+<body class="theme-purple">
 
     <canvas id="network-canvas"></canvas>
 
+    <!-- Splash Screen -->
     <div id="splash-screen">
-    <div class="terminal-box">
-        <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="title">sys_boot@core:~</span>
-        </div>
-        <div class="terminal-body">
-            <p id="command-text">> Initializing core matrix...</p>
-            <div class="progress-container">
-                <div id="progress-bar"></div>
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="title">sys_boot@core:~</span>
             </div>
-            <div class="stats-row">
-                <span id="percentage">0%</span>
-                <span id="status-text">CONNECTING...</span>
+            <div class="terminal-body">
+                <p id="command-text">> Initializing core matrix...</p>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="stats-row">
+                    <span id="percentage">0%</span>
+                    <span id="status-text">CONNECTING...</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<script>
-   document.body.className = "theme-purple";
-</script>
-
-
-<header>
-<nav class="navbar">
-<a href="#home" class="logo">
-<img src="assets/logo.png" alt="Portfolio Logo">
-</a>
-<ul class="nav-links">
-<li><a href="#home" class="active">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>   
-<li><a href="#experience">Experience</a></li>
-<li><a href="#certificate">Certificates</a></li>
-<li><a href="#entrepreneurship"> Entrepreneurship </a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<div class="menu">
-<i class="fa-solid fa-bars"></i>
-</div>
-</nav>
-</header>
-
-
-<section class="hero" id="home">
-<div class="hero-container hidden">
-<div class="hero-content">
-<div class="welcome">
-<span></span>Available for App Development
-</div>
-
-<h1 class="typing-name"></h1>
-<h2 class="role-text"></h2>
-
-<p class="hero-description">
-Building modern cross-platform mobile applications with Flutter & Dart. Passionate about UI design, problem solving and creating impactful solutions.
-</p>
-
-<div class="hero-buttons">
-<a href="assets/Certificates/Amir Hossain Limon_CV.pdf" download class="btn secondary">
-    Download CV
-</a>
-<a href="#contact" class="btn secondary">Contact Me</a>
-</div>
-
-<div class="social-mini">
-<a href="https://github.com/Amirhossainlimon" target="_blank"><i class="fa-brands fa-github"></i></a>
-<a href="https://www.linkedin.com/in/amir-hossain-limon-7a1a01357/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-<a href="https://www.facebook.com/amirhossainlimon/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-</div>
-</div>
-
-<div class="hero-image">
-<div class="glow-ring"></div>
-<div class="profile-card">
-<img src="assets/profile.jpeg" alt="Amir Hossain Limon">
-</div>
-</div>
-</div>
-</section>
-
-
-<section id="about">
-<div class="section-title hidden">
-<h2>About Me</h2>
-</div>
-<div class="glass-box hidden delay-1">
-<p>
-I am Amir Hossain Limon, a Computer Science & Engineering student and Flutter Developer passionate about building high-quality, scalable, and user-centric mobile applications. I specialize in Flutter, Dart, API integration, and modern UI development. I enjoy solving complex problems, exploring new technologies, and transforming innovative ideas into efficient digital solutions. My goal is to create efficient, beautiful and user-friendly applications that solve real-world problems.
-</p>
-</div>
-</section>
-
-<section id="education">
-<div class="section-title hidden">
-<h2>Education</h2>
-</div>
-<div class="timeline">
-<div class="timeline-item hidden">
-<div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-<div class="timeline-content">
-<h3>B.Sc in Computer Science & Engineering</h3>
-<h4>Bangladesh University</h4>
-<p>2024 - Present<br>Currently studying Computer Science & Engineering. Focused on Software Development and Mobile Application Development.</p>
-</div>
-</div>
-<div class="timeline-item hidden delay-1">
-<div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
-<div class="timeline-content">
-<h3>HSC - Science</h3>
-<h4>Kalatia College</h4>
-<p>Passing Year : 2023<br>Science Background.</p>
-</div>
-</div>
-<div class="timeline-item hidden delay-2">
-<div class="timeline-icon"><i class="fa-solid fa-book"></i></div>
-<div class="timeline-content">
-<h3>SSC - Science</h3>
-<h4>Kalatia High School</h4>
-<p>Passing Year : 2021<br>Science Background.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="skills">
-<div class="section-title hidden">
-<h2>Technical Skills</h2>
-</div>
-<div class="skills-logo-container">
-<div class="skill-item hidden"><i class="devicon-flutter-plain colored"></i><p>Flutter</p></div>
-<div class="skill-item hidden delay-1"><i class="devicon-dart-plain colored"></i><p>Dart</p></div>
-<div class="skill-item hidden delay-2"><i class="devicon-c-plain colored"></i><p>C</p></div>
-<div class="skill-item hidden delay-3"><i class="devicon-cplusplus-plain colored"></i><p>C++</p></div>
-<div class="skill-item hidden"><i class="devicon-java-plain colored"></i><p>Java</p></div>
-<div class="skill-item hidden delay-1"><i class="devicon-firebase-plain colored"></i><p>Firebase</p></div>
-<div class="skill-item hidden delay-2"><i class="devicon-git-plain colored"></i><p>Git</p></div>
-<div class="skill-item hidden delay-3"><i class="devicon-github-original colored"></i><p>GitHub</p></div>
-<div class="skill-item hidden"><i class="fa-solid fa-cloud-arrow-up"></i><p>REST API</p></div>
-<div class="skill-item hidden delay-1"><i class="fa-solid fa-layer-group"></i><p>Provider</p></div>
-<div class="skill-item hidden delay-2"><i class="fa-solid fa-bolt"></i><p>GetX</p></div>
-</div>
-</section>
-
-
-<section id="soft-skills">
-<div class="section-title hidden">
-<h2>Soft Skills</h2>
-</div>
-<div class="soft-skills-container">
-<div class="soft-skill-item hidden"><i class="fa-solid fa-users"></i><h3>Leadership</h3><p>Ability to lead teams, organize activities and manage responsibilities effectively.</p></div>
-<div class="soft-skill-item hidden delay-1"><i class="fa-solid fa-lightbulb"></i><h3>Problem Solving</h3><p>Strong analytical thinking and ability to find efficient solutions for challenges.</p></div>
-<div class="soft-skill-item hidden delay-2"><i class="fa-solid fa-comments"></i><h3>Communication</h3><p>Clear communication skills with the ability to share knowledge effectively.</p></div>
-<div class="soft-skill-item hidden"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3><p>Comfortable collaborating with teams and working towards common goals.</p></div>
-<div class="soft-skill-item hidden delay-1"><i class="fa-solid fa-clock"></i><h3>Time Management</h3><p>Managing tasks efficiently with proper planning and maintaining deadlines.</p></div>
-<div class="soft-skill-item hidden delay-2"><i class="fa-solid fa-arrows-rotate"></i><h3>Adaptability</h3><p>Quickly learning new technologies and adapting to new environments.</p></div>
-</div>
-</section>
-
-   
-<section id="projects">
-
-    <div class="section-title hidden">
-        <h2>Projects</h2>
-    </div>
-
-    <div class="projects-container">
-
-        <!-- Trendify -->
-        <div class="project-card hidden">
-            <div class="project-image">
-                <img src="assets/projects/trendify.png" alt="Trendify E-Commerce App">
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <img src="assets/logo.png" alt="Portfolio Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certificate">Certificates</a></li>
+                <li><a href="#entrepreneurship">Entrepreneurship</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
             </div>
+        </nav>
+    </header>
 
-            <div class="project-info">
-                <h3>Trendify - E-Commerce App</h3>
-                <p>
-                    Modern E-Commerce application built with Flutter & Dart,
-                    featuring clean UI, product browsing, product details,
-                    cart functionality, and smooth shopping experience.
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container hidden">
+            <div class="hero-content">
+                <div class="welcome">
+                    <span></span>Available for App Development
+                </div>
+
+                <h1 class="typing-name"></h1>
+                <h2 class="role-text"></h2>
+
+                <p class="hero-description">
+                    Building modern cross-platform mobile applications with Flutter & Dart. Passionate about UI design, problem solving and creating impactful solutions.
                 </p>
 
-                <div class="tech-stack">
+                <div class="hero-buttons">
+                    <a href="assets/Certificates/Amir Hossain Limon_CV.pdf" download class="btn secondary">
+                        Download CV
+                    </a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
+
+                <div class="social-mini">
+                    <a href="https://github.com/Amirhossainlimon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/amir-hossain-limon-7a1a01357/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/amirhossainlimon/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="glow-ring"></div>
+                <div class="profile-card">
+                    <img src="assets/profile.jpeg" alt="Amir Hossain Limon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title hidden">
+            <h2>About Me</h2>
+        </div>
+        <div class="glass-box hidden delay-1">
+            <p>
+                I am Amir Hossain Limon, a Computer Science & Engineering student and Flutter Developer passionate about building high-quality, scalable, and user-centric mobile applications. I specialize in Flutter, Dart, API integration, and modern UI development. I enjoy solving complex problems, exploring new technologies, and transforming innovative ideas into efficient digital solutions. My goal is to create efficient, beautiful and user-friendly applications that solve real-world problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-title hidden">
+            <h2>Education</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item hidden">
+                <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                    <h3>B.Sc in Computer Science & Engineering</h3>
+                    <h4>Bangladesh University</h4>
+                    <p>2024 - Present<br>Currently studying Computer Science & Engineering. Focused on Software Development and Mobile Application Development.</p>
+                </div>
+            </div>
+            <div class="timeline-item hidden delay-1">
+                <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>HSC - Science</h3>
+                    <h4>Kalatia College</h4>
+                    <p>Passing Year : 2023<br>Science Background.</p>
+                </div>
+            </div>
+            <div class="timeline-item hidden delay-2">
+                <div class="timeline-icon"><i class="fa-solid fa-book"></i></div>
+                <div class="timeline-content">
+                    <h3>SSC - Science</h3>
+                    <h4>Kalatia High School</h4>
+                    <p>Passing Year : 2021<br>Science Background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title hidden">
+            <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-logo-container">
+            <div class="skill-item hidden"><i class="devicon-flutter-plain colored"></i><p>Flutter</p></div>
+            <div class="skill-item hidden delay-1"><i class="devicon-dart-plain colored"></i><p>Dart</p></div>
+            <div class="skill-item hidden delay-2"><i class="devicon-c-plain colored"></i><p>C</p></div>
+            <div class="skill-item hidden delay-3"><i class="devicon-cplusplus-plain colored"></i><p>C++</p></div>
+            <div class="skill-item hidden"><i class="devicon-java-plain colored"></i><p>Java</p></div>
+            <div class="skill-item hidden delay-1"><i class="devicon-firebase-plain colored"></i><p>Firebase</p></div>
+            <div class="skill-item hidden delay-2"><i class="devicon-git-plain colored"></i><p>Git</p></div>
+            <div class="skill-item hidden delay-3"><i class="devicon-github-original colored"></i><p>GitHub</p></div>
+            <div class="skill-item hidden"><i class="fa-solid fa-cloud-arrow-up"></i><p>REST API</p></div>
+            <div class="skill-item hidden delay-1"><i class="fa-solid fa-layer-group"></i><p>Provider</p></div>
+            <div class="skill-item hidden delay-2"><i class="fa-solid fa-bolt"></i><p>GetX</p></div>
+        </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="soft-skills">
+        <div class="section-title hidden">
+            <h2>Soft Skills</h2>
+        </div>
+        <div class="soft-skills-container">
+            <div class="soft-skill-item hidden"><i class="fa-solid fa-users"></i><h3>Leadership</h3><p>Ability to lead teams, organize activities and manage responsibilities effectively.</p></div>
+            <div class="soft-skill-item hidden delay-1"><i class="fa-solid fa-lightbulb"></i><h3>Problem Solving</h3><p>Strong analytical thinking and ability to find efficient solutions for challenges.</p></div>
+            <div class="soft-skill-item hidden delay-2"><i class="fa-solid fa-comments"></i><h3>Communication</h3><p>Clear communication skills with the ability to share knowledge effectively.</p></div>
+            <div class="soft-skill-item hidden"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3><p>Comfortable collaborating with teams and working towards common goals.</p></div>
+            <div class="soft-skill-item hidden delay-1"><i class="fa-solid fa-clock"></i><h3>Time Management</h3><p>Managing tasks efficiently with proper planning and maintaining deadlines.</p></div>
+            <div class="soft-skill-item hidden delay-2"><i class="fa-solid fa-arrows-rotate"></i><h3>Adaptability</h3><p>Quickly learning new technologies and adapting to new environments.</p></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-title hidden">
+            <h2>Projects</h2>
+        </div>
+
+        <div class="projects-container">
+            <!-- Trendify -->
+            <div class="project-card hidden">
+                <div class="project-image">
+                    <img src="assets/projects/trendify.png" alt="Trendify E-Commerce App">
+                </div>
+                <div class="project-info">
+                    <h3>Trendify - E-Commerce App</h3>
+                    <p>Modern E-Commerce application built with Flutter & Dart, featuring clean UI, product browsing, product details, cart functionality, and smooth shopping experience.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                        <span>UI Design</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://meek-chimera-356c93.netlify.app" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-globe"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/trendify" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/trendify/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-download"></i> Download APK
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TaskFlow -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/TaskFlow.png" alt="TaskFlow Task Manager">
+                </div>
+                <div class="project-info">
+                    <h3>TaskFlow — Task Manager</h3>
+                    <p>Modern task management application built with Flutter and Firebase, featuring real-time task management, authentication, search, filters, and progress tracking.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase Auth</span>
+                        <span>Cloud Firestore</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://lnkd.in/p/gkrJcE4c" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/TaskFlow" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Management App -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/projects/contact.png" alt="Contact Management App">
+                </div>
+                <div class="project-info">
+                    <h3>Contact Management App</h3>
+                    <p>Flutter based contact management application with clean UI and local database CRUD functionality.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>SQLite</span>
+                        <span>CRUD</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_flutter-flutterdeveloper-dart-ugcPost-7494848807403261952-flfl/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/Contact_Management_App" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMI Calculator -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/projects/bmi.webp" alt="BMI Calculator">
+                </div>
+                <div class="project-info">
+                    <h3>BMI Calculator</h3>
+                    <p>Flutter based BMI calculator application with clean and user-friendly interface.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Java</span>
+                        <span>UI Design</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_mobileappdevelopment-androiddev-bmiapp-ugcPost-7410379352779026432-8GHp/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/BMI_Checker_APP" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather App -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/projects/weather.webp" alt="Weather App">
+                </div>
+                <div class="project-info">
+                    <h3>Weather App</h3>
+                    <p>Weather application using API integration to show real-time weather information.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>API</span>
+                        <span>Dart</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_weatherpro-flutterdev-dart-ugcPost-7412165379243859968-ZVeT/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/Simple_weather_app" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CashTrack -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/projects/cashtrack.jfif" alt="CashTrack Expense Tracker">
+                </div>
+                <div class="project-info">
+                    <h3>CashTrack — Expense Tracker</h3>
+                    <p>Modern personal finance management application built with Flutter and SQLite, featuring income and expense tracking, transaction management, monthly insights, category-wise breakdown, and persistent local storage.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>SQLite</span>
+                        <span>Provider</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://cash-track-eight.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-globe"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/expense_tracker_project" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CalorieSnap App -->
+            <div class="project-card hidden">
+                <div class="project-image">
+                    <img src="assets/projects/Caloriesnap.jfif" alt="CalorieSnap App">
+                </div>
+                <div class="project-info">
+                    <h3>CalorieSnap – Calorie Tracker</h3>
+                    <p>A smart calorie tracking app to monitor daily food intake, manage calorie goals, and track nutrition with a clean and user-friendly Flutter UI.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>SharedPreferences</span>
+                        <span>fl_chart</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://tubular-salamander-61c976.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-globe"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/calorie_tracker" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard Quiz App -->
+            <div class="project-card hidden delay-1">
+                <div class="project-image">
+                    <img src="assets/projects/flashcard.webp" alt="Flashcard Quiz App">
+                </div>
+                <div class="project-info">
+                    <h3>Flashcard Quiz App</h3>
+                    <p>Interactive quiz application developed during CodeAlpha internship.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>CodeAlpha</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_codealpha-codealphainternship-flutterdeveloper-ugcPost-7482736418490961920-71KD/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/CodeAlpha_flashcard_quizApp" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Vault -->
+            <div class="project-card hidden">
+                <div class="project-image">
+                    <img src="assets/projects/quote.webp" alt="Quote Vault">
+                </div>
+                <div class="project-info">
+                    <h3>Quote Vault</h3>
+                    <p>Motivational quote application built with Flutter and local storage.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>Provider</span>
+                        <span>Local Storage</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_flutter-dart-mobileappdevelopment-ugcPost-7482514905854590976-ZETM/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Amirhossainlimon/CodeAlpha_Quote_Vault_APP" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-title hidden">
+            <h2>Experience</h2>
+        </div>
+
+        <div class="experience-container">
+            <div class="experience-box hidden">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>App Development Intern</h3>
+                <h4>CodeAlpha</h4>
+                <p>Worked as an App Development Intern at CodeAlpha. Developed Flutter applications and gained practical experience with Flutter, Dart, UI Design, API integration and mobile application development.</p>
+                <div class="exp-tags">
                     <span>Flutter</span>
                     <span>Dart</span>
                     <span>Firebase</span>
-                    <span>UI Design</span>
+                    <span>API Integration</span>
                 </div>
-
-                <div class="project-buttons">
-                    <a href="https://meek-chimera-356c93.netlify.app" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-globe"></i> Live Demo
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/trendify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/trendify/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-download"></i> Download APK
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- TaskFlow -->
-        <div class="project-card hidden delay-1">
-            <div class="project-image">
-                <img src="assets/TaskFlow.png" alt="TaskFlow Task Manager">
-            </div>
-
-            <div class="project-info">
-                <h3>TaskFlow — Task Manager</h3>
-                <p>
-                    Modern task management application built with
-                    Flutter and Firebase, featuring real-time task
-                    management, authentication, search, filters,
-                    and progress tracking.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>Dart</span>
-                    <span>Firebase Auth</span>
-                    <span>Cloud Firestore</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://lnkd.in/p/gkrJcE4c" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/TaskFlow" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Management App -->
-        <div class="project-card hidden delay-1">
-            <div class="project-image">
-                <img src="assets/projects/contact.png" alt="Contact Management App">
-            </div>
-
-            <div class="project-info">
-                <h3>Contact Management App</h3>
-                <p>
-                    Flutter based contact management application with
-                    clean UI and local database CRUD functionality.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>Dart</span>
-                    <span>SQLite</span>
-                    <span>CRUD</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_flutter-flutterdeveloper-dart-ugcPost-7494848807403261952-flfl/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/Contact_Management_App" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- BMI Calculator -->
-        <div class="project-card hidden delay-1">
-            <div class="project-image">
-                <img src="assets/projects/bmi.webp" alt="BMI Calculator">
-            </div>
-
-            <div class="project-info">
-                <h3>BMI Calculator</h3>
-                <p>
-                    Flutter based BMI calculator application with clean
-                    and user-friendly interface.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>Java</span>
-                    <span>UI Design</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_mobileappdevelopment-androiddev-bmiapp-ugcPost-7410379352779026432-8GHp/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/BMI_Checker_APP" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Weather App -->
-        <div class="project-card hidden delay-1">
-            <div class="project-image">
-                <img src="assets/projects/weather.webp" alt="Weather App">
-            </div>
-
-            <div class="project-info">
-                <h3>Weather App</h3>
-                <p>
-                    Weather application using API integration to show
-                    real-time weather information.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>API</span>
-                    <span>Dart</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_weatherpro-flutterdev-dart-ugcPost-7412165379243859968-ZVeT/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/Simple_weather_app" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- CashTrack -->
-<div class="project-card hidden delay-1">
-    <div class="project-image">
-        <img src="assets/projects/cashtrack.jfif" alt="CashTrack Expense Tracker">
-    </div>
-
-    <div class="project-info">
-        <h3>CashTrack — Expense Tracker</h3>
-        <p>
-            Modern personal finance management application built with
-            Flutter and SQLite, featuring income and expense tracking,
-            transaction management, monthly insights, category-wise
-            breakdown, and persistent local storage.
-        </p>
-
-        <div class="tech-stack">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>SQLite</span>
-            <span>Provider</span>
-        </div>
-
-        <div class="project-buttons">
-            <a href="https://cash-track-eight.vercel.app/"
-               target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-globe"></i> Live Demo
-            </a>
-
-            <a href="https://github.com/Amirhossainlimon/expense_tracker_project"
-               target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i> Source Code
-            </a>
-        </div>
-    </div>
-</div>
-        <!-- CalorieSnap App -->
-<div class="project-card hidden">
-    <div class="project-image">
-        <img src="assets/projects/Caloriesnap.jfif" alt="CalorieSnap App">
-    </div>
-
-    <div class="project-info">
-        <h3>CalorieSnap – Calorie Tracker</h3>
-        <p>
-            A smart calorie tracking app to monitor daily food intake,
-            manage calorie goals, and track nutrition with a clean
-            and user-friendly Flutter UI.
-        </p>
-
-        <div class="tech-stack">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>SharedPreferences</span>
-            <span>fl_chart</span>
-        </div>
-
-        <div class="project-buttons">
-            <a href="https://tubular-salamander-61c976.netlify.app/"
-               target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-globe"></i> Live Demo
-            </a>
-
-            <a href="https://github.com/Amirhossainlimon/calorie_tracker"
-               target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i> Source Code
-            </a>
-        </div>
-    </div>
-</div>
-        
-
- <!-- Flashcard Quiz App -->
-        <div class="project-card hidden delay-1">
-            <div class="project-image">
-                <img src="assets/projects/flashcard.webp" alt="Flashcard Quiz App">
-            </div>
-
-            <div class="project-info">
-                <h3>Flashcard Quiz App</h3>
-                <p>
-                    Interactive quiz application developed during
-                    CodeAlpha internship.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>Dart</span>
-                    <span>CodeAlpha</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_codealpha-codealphainternship-flutterdeveloper-ugcPost-7482736418490961920-71KD/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/CodeAlpha_flashcard_quizApp" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Quote Vault -->
-        <div class="project-card hidden">
-            <div class="project-image">
-                <img src="assets/projects/quote.webp" alt="Quote Vault">
-            </div>
-
-            <div class="project-info">
-                <h3>Quote Vault</h3>
-                <p>
-                    Motivational quote application built with Flutter
-                    and local storage.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Flutter</span>
-                    <span>Provider</span>
-                    <span>Local Storage</span>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="https://www.linkedin.com/posts/amir-hossain-limon-7a1a01357_flutter-dart-mobileappdevelopment-ugcPost-7482514905854590976-ZETM/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-video"></i> Demo Video
-                    </a>
-                    <a href="https://github.com/Amirhossainlimon/CodeAlpha_Quote_Vault_APP" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-       
-       
-
-<section id="experience">
-
-    <div class="section-title hidden">
-        <h2>Experience</h2>
-    </div>
-
-    <div class="experience-container">
-
-        <div class="experience-box hidden">
-            <div class="exp-icon">
-                <i class="fa-solid fa-mobile-screen"></i>
-            </div>
-
-            <h3>App Development Intern</h3>
-            <h4>CodeAlpha</h4>
-
-            <p>
-                Worked as an App Development Intern at CodeAlpha. Developed Flutter applications and gained practical experience with Flutter, Dart, UI Design, API integration and mobile application development.
-            </p>
-
-            <div class="exp-tags">
-                <span>Flutter</span>
-                <span>Dart</span>
-                <span>Firebase</span>
-                <span>API Integration</span>
-            </div>
-
-            <a class="certificate-btn" href="assets/Certificates/job_certificate.pdf" target="_blank">
-                <i class="fa-solid fa-certificate"></i> Certificate
-            </a>
-        </div>
-
-
-        <div class="experience-box hidden delay-1">
-
-            <div class="exp-icon">
-                <i class="fa-solid fa-chalkboard-user"></i>
-            </div>
-
-            <h3>Teaching Experience</h3>
-            <h4>ICT & Higher Math Instructor</h4>
-
-            <p>
-                Teaching HSC level students for 3 years in Higher Mathematics and ICT.
-                <br><br>
-                Also teaching Class 1-7 students all subjects for 6 years.
-            </p>
-
-            <div class="exp-tags">
-                <span>Higher Math</span>
-                <span>ICT</span>
-                <span>Teaching</span>
-            </div>
-
-        </div>
-
-
-      
-        <div class="experience-box hidden delay-2">
-
-            <div class="exp-icon">
-                <i class="fa-solid fa-users"></i>
-            </div>
-
-            <h3>Leadership</h3>
-            <h4>Kalatia Anti-Discrimination Students and People</h4>
-
-            <p>
-                Leadership experience in teamwork, community activities and organizing programs.
-            </p>
-
-            <div class="exp-tags">
-                <span>Leadership</span>
-                <span>Team Management</span>
-            </div>
-
-            <a class="certificate-btn" href="https://www.facebook.com/profile.php?id=61564357096441" target="_blank">
-                <i class="fa-brands fa-facebook"></i> Facebook Page
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<section id="certificate">
-
-<div class="section-title hidden">
-<h2>Certificates & Achievements</h2>
-    
-</div>
-
-
-<div class="certificate-container">
-
-<div class="certificate-card hidden delay-3">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-laptop-code"></i>
-    </div>
-    <h3>CodeAlpha Internship</h3>
-    <p>App Development Internship Offer Letter</p>
-    <a href="assets/Certificates/CodeAlpha_Offer_Letter.pdf" target="_blank">
-        View Offer Letter
-    </a>
-</div>
-
-<div class="certificate-card hidden delay-4">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-award"></i>
-    </div>
-    <h3>Letter of Recommendation</h3>
-    <p>Recommendation Letter from CodeAlpha</p>
-    <a href="assets/Certificates/LOR.pdf" target="_blank">
-        View Certificate
-    </a>
-</div>
-
-  
-<div class="certificate-card hidden delay-2">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-mobile-screen"></i>
-    </div>
-    <h3> Internship Completion Certificate </h3>
-    <p>CodeAlpha Internship Completion Certificate</p>
-    <a href="assets/Certificates/job_certificate.pdf" target="_blank">
-        View Certificate
-    </a>
-</div>
-    
-<div class="certificate-card hidden delay-3">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-mobile-screen-button"></i>
-    </div>
-    <h3>Hex Softwares Internship</h3>
-    <p>App Development Internship Offer Letter</p>
-    <a href="assets/Certificates/HEX_internship.pdf" target="_blank">
-      View Offer Letter
-    </a>
-</div>
-  
-<div class="certificate-card hidden delay-5">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-building"></i>
-    </div>
-
-    <h3>SAM AI Technologies Internship</h3>
-    <p>Android App Development Internship Offer Letter</p>
-
-    <a href="assets/Certificates/SAM_AI_Offer_Letter.pdf" target="_blank">
-        View Offer Letter
-    </a>
-</div>
-  <div class="certificate-card hidden delay-4"> 
-    <div class="certificate-logo"> 
-        <i class="fa-solid fa-mobile-screen"></i>
-    </div> 
-
-    <h3>ZerixTech Internship</h3> 
-    <p>App Development Internship Offer Letter</p> 
-
-    <a href="assets/Certificates/ZerixTech_App_Development_Internship.pdf" target="_blank"> 
-        View Offer Letter 
-    </a> 
-</div>
-
-
-<div class="certificate-card hidden">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-robot"></i>
-    </div>
-    <h3>Agent_X</h3>
-    <p>AI & Technology Certificate</p>
-    <a href="assets/Certificates/Agent_X.pdf" target="_blank">
-        View Certificate
-    </a>
-</div>
-
-
-<div class="certificate-card hidden delay-1">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-brain"></i>
-    </div>
-    <h3>AI Prompt Engineering</h3>
-    <p>AI Prompt Related Certificate</p>
-    <a href="assets/Certificates/AI_Prompt.pdf" target="_blank">
-        View Certificate
-    </a>
-</div>
-
-
-<div class="certificate-card hidden delay-2"> 
-    <div class="certificate-logo"> 
-        <i class="fa-solid fa-brain"></i>
-    </div> 
-
-    <h3>GenAI & Prompt Engineering</h3> 
-    <p>Generative AI and Prompt Engineering Certificate</p> 
-
-    <a href="assets/Certificates/GenAI_Prompt_Engineering.pdf" target="_blank"> 
-        View Certificate 
-    </a> 
-</div>
-    
-<div class="certificate-card hidden delay-2">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-code"></i>
-    </div>
-    <h3>BU CodeX</h3>
-    <p>Programming Competition Certificate</p>
-    <a href="assets/Certificates/BU_CodeX.png" target="_blank">
-        View Certificate
-    </a>
-</div>
-
-
-<div class="certificate-card hidden delay-1">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-shield-halved"></i>
-    </div>
-    <h3>Cyber Security</h3>
-    <p>Certificate of Attendance – Cybersecurity Seminar</p>
-    <a href="assets/Certificates/Cyber_Security.pdf" target="_blank">
-        View Certificate
-    </a>
-</div>
-    
-
-<div class="certificate-card hidden delay-3">
-    <div class="certificate-logo">
-        <i class="fa-solid fa-language"></i>
-    </div>
-    <h3>Spoken English</h3>
-    <p>English Communication Certificate</p>
-    <a href="assets/Certificates/Spoken_English.png" target="_blank">
-        View Certificate
-    </a>
-</div>
-
-
-
-
-
-</div>
-
-</section>
-
-
-
-<section id="entrepreneurship" class="entrepreneurship-section">
-
-  <div class="section-title hidden">
-    <h2>Entrepreneurship</h2>
-  </div>
-
-
-  <div class="entrepreneur-card hidden">
-
-
-    <div class="entrepreneur-image">
-
-      <img src="assets/izz.jpeg" 
-           alt="IZZ HUB Clothing Brand"
-           loading="lazy">
-
-    </div>
-
-
-
-    <div class="entrepreneur-details">
-
-
-      <span class="role-badge">
-        Owner
-      </span>
-
-
-      <h3>
-       IZZ HUB
-      </h3>
-
-
-      <p>
-        Clothing brand focused on modern fashion,
-        quality products, and creative branding.
-        Managing brand growth, marketing, and
-        customer engagement.
-      </p>
-
-
-
-      <div class="tech-stack">
-
-        <span>Clothing</span>
-
-        <span>Branding</span>
-
-        <span>Marketing</span>
-
-      </div>
-
-
-
-      <div class="project-buttons">
-
-        <a href="https://www.facebook.com/profile.php?id=61595752146536"
-           target="_blank"
-           rel="noopener noreferrer">
-
-          <i class="fa-brands fa-facebook"></i>
-
-          Visit Page
-
-        </a>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<section id="github">
-<div class="section-title hidden">
-<h2>GitHub Activity</h2>
-</div>
-
-<div class="github-card hidden">
-
-<i class="fa-brands fa-github"></i>
-
-
-<p>
-Building Flutter projects, improving coding skills and learning new technologies continuously.
-</p>
-
-<div class="github-graph">
-
-<img src="https://ghchart.rshah.org/6d5dfc/Amirhossainlimon" 
-alt="GitHub Contribution Graph">
-
-</div>
-
-<a href="https://github.com/Amirhossainlimon" 
-target="_blank" 
-class="github-btn">
-
-View GitHub Profile
-
-</a>
-
-</div>
-
-</section>
-
-<section id="contact">
-    <div class="section-title hidden">
-        <h2>Contact</h2>
-    </div>
-
-    <div class="contact-wrapper">
-
-                <div class="contact-container">
-
-            <div class="contact-box hidden">
-                <a href="mailto:amirhossainlimon8@gmail.com">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>amirhossainlimon8@gmail.com</p>
-                    </div>
+                <a class="certificate-btn" href="assets/Certificates/job_certificate.pdf" target="_blank">
+                    <i class="fa-solid fa-certificate"></i> Certificate
                 </a>
             </div>
 
-            <div class="contact-box hidden delay-1">
-                <div class="icon-box">
-                    <i class="fa-solid fa-phone"></i>
+            <div class="experience-box hidden delay-1">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
                 </div>
-                <div>
-                    <h3>Phone</h3>
-                    <p>+8801781710280</p>
+                <h3>Teaching Experience</h3>
+                <h4>ICT & Higher Math Instructor</h4>
+                <p>Teaching HSC level students for 3 years in Higher Mathematics and ICT.<br><br>Also teaching Class 1-7 students all subjects for 6 years.</p>
+                <div class="exp-tags">
+                    <span>Higher Math</span>
+                    <span>ICT</span>
+                    <span>Teaching</span>
                 </div>
             </div>
 
-            <div class="contact-box hidden delay-2">
-                <a href="https://wa.me/8801781710280" target="_blank">
-                    <div class="icon-box">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                        <h3>WhatsApp</h3>
-                        <p>Chat Now</p>
-                    </div>
+            <div class="experience-box hidden delay-2">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3>Leadership</h3>
+                <h4>Kalatia Anti-Discrimination Students and People</h4>
+                <p>Leadership experience in teamwork, community activities and organizing programs.</p>
+                <div class="exp-tags">
+                    <span>Leadership</span>
+                    <span>Team Management</span>
+                </div>
+                <a class="certificate-btn" href="https://www.facebook.com/profile.php?id=61564357096441" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook"></i> Facebook Page
                 </a>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-box hidden">
-                <a href="https://www.linkedin.com" target="_blank">
-                    <div class="icon-box">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <p>Connect</p>
-                    </div>
-                </a>
+    <!-- Certificates Section -->
+    <section id="certificate">
+        <div class="section-title hidden">
+            <h2>Certificates & Achievements</h2>
+        </div>
+
+        <div class="certificate-container">
+            <div class="certificate-card hidden delay-3">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3>CodeAlpha Internship</h3>
+                <p>App Development Internship Offer Letter</p>
+                <a href="assets/Certificates/CodeAlpha_Offer_Letter.pdf" target="_blank">View Offer Letter</a>
             </div>
 
+            <div class="certificate-card hidden delay-4">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3>Letter of Recommendation</h3>
+                <p>Recommendation Letter from CodeAlpha</p>
+                <a href="assets/Certificates/LOR.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-2">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>Internship Completion Certificate</h3>
+                <p>CodeAlpha Internship Completion Certificate</p>
+                <a href="assets/Certificates/job_certificate.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-3">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h3>Hex Softwares Internship</h3>
+                <p>App Development Internship Offer Letter</p>
+                <a href="assets/Certificates/HEX_internship.pdf" target="_blank">View Offer Letter</a>
+            </div>
+
+            <div class="certificate-card hidden delay-5">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <h3>SAM AI Technologies Internship</h3>
+                <p>Android App Development Internship Offer Letter</p>
+                <a href="assets/Certificates/SAM_AI_Offer_Letter.pdf" target="_blank">View Offer Letter</a>
+            </div>
+
+            <div class="certificate-card hidden delay-4">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>ZerixTech Internship</h3>
+                <p>App Development Internship Offer Letter</p>
+                <a href="assets/Certificates/ZerixTech_App_Development_Internship.pdf" target="_blank">View Offer Letter</a>
+            </div>
+
+            <div class="certificate-card hidden">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3>Agent_X</h3>
+                <p>AI & Technology Certificate</p>
+                <a href="assets/Certificates/Agent_X.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-1">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>AI Prompt Engineering</h3>
+                <p>AI Prompt Related Certificate</p>
+                <a href="assets/Certificates/AI_Prompt.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-2">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>GenAI & Prompt Engineering</h3>
+                <p>Generative AI and Prompt Engineering Certificate</p>
+                <a href="assets/Certificates/GenAI_Prompt_Engineering.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-2">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>BU CodeX</h3>
+                <p>Programming Competition Certificate</p>
+                <a href="assets/Certificates/BU_CodeX.png" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-1">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Cyber Security</h3>
+                <p>Certificate of Attendance – Cybersecurity Seminar</p>
+                <a href="assets/Certificates/Cyber_Security.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card hidden delay-3">
+                <div class="certificate-logo">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3>Spoken English</h3>
+                <p>English Communication Certificate</p>
+                <a href="assets/Certificates/Spoken_English.png" target="_blank">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrepreneurship Section -->
+    <section id="entrepreneurship" class="entrepreneurship-section">
+        <div class="section-title hidden">
+            <h2>Entrepreneurship</h2>
         </div>
 
-       
-        <div class="contact-form hidden">
-            <h2>Let's Talk 🚀</h2>
-            <p>
-                Have a project idea or want to work together? 
-                Send me a message.
-            </p>
+        <div class="entrepreneur-card hidden">
+            <div class="entrepreneur-image">
+                <img src="assets/izz.jpeg" alt="IZZ HUB Clothing Brand" loading="lazy">
+            </div>
 
-            <form action="https://formspree.io/f/mbgrglkq" method="POST">
-                <input 
-                    type="text" 
-                    name="name" 
-                    placeholder="Your Name" 
-                    required>
+            <div class="entrepreneur-details">
+                <span class="role-badge">Owner</span>
+                <h3>IZZ HUB</h3>
+                <p>
+                    Clothing brand focused on modern fashion, quality products, and creative branding. Managing brand growth, marketing, and customer engagement.
+                </p>
 
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Your Email" 
-                    required>
+                <div class="tech-stack">
+                    <span>Clothing</span>
+                    <span>Branding</span>
+                    <span>Marketing</span>
+                </div>
 
-                <textarea 
-                    name="message" 
-                    placeholder="Your Message" 
-                    rows="5" 
-                    required></textarea>
+                <div class="project-buttons">
+                    <a href="https://www.facebook.com/profile.php?id=61595752146536" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i> Visit Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <button type="submit">
-                    Send Message
-                </button>
-            </form>
+    <!-- GitHub Section -->
+    <section id="github">
+        <div class="section-title hidden">
+            <h2>GitHub Activity</h2>
         </div>
 
-    </div>
-</section>
+        <div class="github-card hidden">
+            <i class="fa-brands fa-github"></i>
+            <p>Building Flutter projects, improving coding skills and learning new technologies continuously.</p>
+            <div class="github-graph">
+                <img src="https://ghchart.rshah.org/6d5dfc/Amirhossainlimon" alt="GitHub Contribution Graph">
+            </div>
+            <a href="https://github.com/Amirhossainlimon" target="_blank" rel="noopener noreferrer" class="github-btn">
+                View GitHub Profile
+            </a>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title hidden">
+            <h2>Contact</h2>
+        </div>
 
-<footer>
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="contact-box hidden">
+                    <a href="mailto:amirhossainlimon8@gmail.com">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>amirhossainlimon8@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
 
-    <p>
-        © <span>2026</span> Amir Hossain Limon. All Rights Reserved.
-    </p>
+                <div class="contact-box hidden delay-1">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+8801781710280</p>
+                    </div>
+                </div>
 
-</footer>
+                <div class="contact-box hidden delay-2">
+                    <a href="https://wa.me/8801781710280" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-box">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>Chat Now</p>
+                        </div>
+                    </a>
+                </div>
 
+                <div class="contact-box hidden">
+                    <a href="https://www.linkedin.com/in/amir-hossain-limon-7a1a01357/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-box">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>Connect</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
+            <div class="contact-form hidden">
+                <h2>Let's Talk 🚀</h2>
+                <p>Have a project idea or want to work together? Send me a message.</p>
 
+                <form action="https://formspree.io/f/mbgrglkq" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>© <span>2026</span> Amir Hossain Limon. All Rights Reserved.</p>
+    </footer>
 
-<div class="cursor-dot"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-<div class="cursor-outline"></div>
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
 
+    <!-- Network Canvas Particle Simulation -->
+    <script>
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
 
-
-<script src="script.js"></script>
-
-<script>
-    const canvas = document.getElementById('network-canvas');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    let mouse = {
-        x: null,
-        y: null,
-        radius: 150
-    };
-
-    window.addEventListener('mousemove', (event) => {
-        mouse.x = event.clientX;
-        mouse.y = event.clientY;
-    });
-
-    window.addEventListener('mouseout', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 1.5;
-            this.vy = (Math.random() - 0.5) * 1.5;
-            this.size = Math.random() * 2 + 1.5;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
+        let mouse = {
+            x: null,
+            y: null,
+            radius: 150
+        };
 
-            if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-            if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-        }
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
 
-        draw() {
-            ctx.fillStyle = '#8a2be2'; // আপনার থিম কালারের সাথে ম্যাচ করার জন্য পার্পল/ব্লু শেড
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
 
-    let particlesArray = [];
-    const numberOfParticles = Math.floor((window.innerWidth * window.innerHeight) / 10000);
-
-    function init() {
-        particlesArray = [];
-        for (let i = 0; i < numberOfParticles; i++) {
-            particlesArray.push(new Particle());
-        }
-    }
-    init();
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-            particlesArray[i].draw();
-
-            for (let j = i + 1; j < particlesArray.length; j++) {
-                let dx = particlesArray[i].x - particlesArray[j].x;
-                let dy = particlesArray[i].y - particlesArray[j].y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < 100) {
-                    ctx.strokeStyle = `rgba(138, 43, 226, ${1 - distance / 100})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                    ctx.stroke();
-                }
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 1.5;
+                this.vy = (Math.random() - 0.5) * 1.5;
+                this.size = Math.random() * 2 + 1.5;
             }
 
-            if (mouse.x !== null && mouse.y !== null) {
-                let mdx = particlesArray[i].x - mouse.x;
-                let mdy = particlesArray[i].y - mouse.y;
-                let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
 
-                if (mDistance < mouse.radius) {
-                    ctx.strokeStyle = `rgba(0, 255, 204, ${1 - mDistance / mouse.radius})`;
-                    ctx.lineWidth = 0.8;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.stroke();
-                }
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+            }
+
+            draw() {
+                ctx.fillStyle = '#8a2be2';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
             }
         }
 
-        requestAnimationFrame(animate);
-    }
+        let particlesArray = [];
+        const numberOfParticles = Math.floor((window.innerWidth * window.innerHeight) / 10000);
 
-    animate();
-</script>
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        init();
 
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    let dx = particlesArray[i].x - particlesArray[j].x;
+                    let dy = particlesArray[i].y - particlesArray[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(138, 43, 226, ${1 - distance / 100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                if (mouse.x !== null && mouse.y !== null) {
+                    let mdx = particlesArray[i].x - mouse.x;
+                    let mdy = particlesArray[i].y - mouse.y;
+                    let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+
+                    if (mDistance < mouse.radius) {
+                        ctx.strokeStyle = `rgba(0, 255, 204, ${1 - mDistance / mouse.radius})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
